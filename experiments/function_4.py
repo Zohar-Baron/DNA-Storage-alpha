@@ -7,18 +7,17 @@
 # Email: anavy (at) technion (dot) ac (dot) il
 # Created: 01/07/2019 14:17
 
-from encoding.bin_coding import heming_code_2B
+from encoding.bin_coding import hamming_code_2B
 from encoding.bin2dna.two_bits import two_bits_3
 from simualtors.synthesizers import printer_5
 from simualtors.storage import storage_6
 from simualtors.sequencers import nanopore_7B
-from encoding.reads2seq import dna2bin_9
 
 def main():
     print('generate message')
     msg_in = '01010110'
     print('encode message')
-    msg_encoded = heming_code_2B.encode(msg_in)
+    msg_encoded = hamming_code_2B.encode(msg_in)
     print('convert to dna')
     dna_encoded = two_bits_3.bin2dna(msg_encoded)
     print('synthesize dna')
@@ -32,7 +31,7 @@ def main():
     print('convert to binary')
     msg_read = two_bits_3.dna2bin(dna_seq_read)
     print('decode message')
-    msg_decoded = heming_code_2B.decode(msg_read)
+    msg_decoded = hamming_code_2B.decode(msg_read)
     print('done:')
     print(msg_in,msg_decoded)
 

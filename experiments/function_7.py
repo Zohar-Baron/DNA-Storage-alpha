@@ -12,7 +12,6 @@ from encoding.dna_coding import something_code_4B
 from simualtors.synthesizers import printer_5
 from simualtors.storage import storage_6
 from simualtors.sequencers import NGS_7A
-from encoding.reads2seq import dna2bin_9
 
 def main():
     print('generate message')
@@ -28,7 +27,7 @@ def main():
     print('sequence dna')
     reads = NGS_7A.dna_sequence(dna_mol_stor)
     print('infer dna sequence')
-    dna_seq_read = dna2bin_9.infer(reads)
+    dna_seq_read = two_bits_3.dna2bin(reads)
     print('convert to binary')
     msg_read = two_bits_3.dna2bin(dna_seq_read)
     print('decode message')

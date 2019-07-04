@@ -12,7 +12,6 @@ from encoding.dna_coding import something_code_4B
 from simualtors.synthesizers import printer_5
 from simualtors.storage import storage_6
 from simualtors.sequencers import nanopore_7B
-from encoding.reads2seq import dna2bin_9
 
 def main():
     print('generate message')
@@ -28,7 +27,7 @@ def main():
     print('sequence dna')
     reads = nanopore_7B.dna_sequence(dna_mol_stor)
     print('infer dna sequence')
-    dna_seq_read = dna2bin_9.infer(reads)
+    dna_seq_read = two_bits_3.dna2bin(reads)
     print('convert to binary')
     msg_read = two_bits_3.dna2bin(dna_seq_read)
     print('decode message')
