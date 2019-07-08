@@ -20,8 +20,6 @@ def encode(msg):
     return out_msg
 
 
-
-
 """this function will decode frim binari with corecting mistake code to the original code (hopfuly) 
 paremeter_1: the encoded msg
 type_paramete_1: str
