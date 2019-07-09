@@ -11,7 +11,7 @@ import math
 import random
 
 
-def dna_sequencer(stored_data, b, g, h):
+def dna_sequencer(stored_data, b, g, h, a):
     sequenced_dna = []
     molecule = ''
     for mol in stored_data:
@@ -36,6 +36,9 @@ def dna_sequencer(stored_data, b, g, h):
                     molecule += random_char
         sequenced_dna.append(molecule)
         molecule = ''
+    for molecule in sequenced_dna:
+        if len(molecule) != a:
+            sequenced_dna.remove(molecule)
     #יוצרת רשימה ובתוכה רשימות של חצאי אוליגונוקלאוטידם שזהים אחד לשני (לפי האינדקס)
 	#משווה ביניהם ואם יש משהו ממש יוצא דופן אז מוחקת אותו לגמרי
     #משווה בין כל תו ברשימה (הראשונה) ואם הוא שווה לאותו התו ברוב שאר הרשימות של אותו אוליגונוקלאוטיד, אז מוסיפה אותו לרשימה החדשה שתהיהי האאוטפוט

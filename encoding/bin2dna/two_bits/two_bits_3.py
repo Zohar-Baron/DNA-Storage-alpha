@@ -6,7 +6,9 @@
 # Author: Zohar Baron
 # Email: anavy (at) technion (dot) ac (dot) il
 # Created: 01/07/2019 15:49
-
+""" this function wil translate the binary code to dna code' seperate it to oligosnokleotides (and add index?)
+param_1: msg_encoded: str of encoded binar code.
+return: list with str in it of oligos (not seperated) each mol is 10 lenght."""
 
 
 import math
@@ -21,8 +23,8 @@ def bin2dna(msg_encoded):
 
 
 def dna2bin(msg):
-    translator = {'T': '01', 'A': '10', 'G': '00', 'C': '11'}
     output = ''
+    translator2= {'T': '01', 'A': '10', 'G': '00', 'C': '11'}
     for letter in msg:
-        output += translator[letter]
+        output += translator2[letter]
     return output

@@ -19,14 +19,18 @@ import random
 
 
 def printer_dna(dna_list, a, b, c, d):
-    #oligos_list = [dna_list[5*i:5*i+10] for i in range(int(math.ceil(len(dna_list)/5)))]
-    #
+    _ = """oligos_list_no_index = [dna_list[(a//2)*i:(a//2)*i+a] for i in range(int(math.ceil(len(dna_list)/(a//2)))]
+    index_dict = {1: 'AAAA', 2: 'AAAT', 3: 'AAAC', 4: 'AAAG'}
+    oligos_list = []
+    oligonukleotide = ''
+    for i, oligo in enumerate(oligos_list_no_index):
+        oligonukleotide += index_dict[i]
+        oligonukleotide += o
+    oligos_list.append(oligonukleotide)"""#
     oligos_list = ''
     for char in dna_list:
-        oligos_list += char
-    #
+        oligos_list += char#
     multiple_oligos = []
-    #for oligo in oligos_list:
     multiple_oligos.append([oligos_list for i in range(a)])
     printed_oligos = []
     molecule = ''
