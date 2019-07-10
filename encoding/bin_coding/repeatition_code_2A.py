@@ -27,6 +27,12 @@ return: str of the hopfuly original msg"""
 
 def decode(word):
     groups_of_3_list = [word[3*i:3*i+3] for i in range(int(math.ceil(len(word)/3)))]
+    #added zeros and i need to figure ouut a way to "rememeber" take it down a the end.
+    if len(groups_of_3_list[-1]) == 1:
+        groups_of_3_list[-1] += '00'
+    if len(groups_of_3_list[-1]) == 2:
+        groups_of_3_list[-1] += '0'
+    #
     original_msg = ''
     for group in groups_of_3_list:
         sum = int(group[0]) + int(group[1]) + int(group[2])

@@ -13,9 +13,10 @@ from encoding.bin2dna.two_bits import two_bits_3
 from simualtors.synthesizers import printer_5
 from simualtors.storage import storage_6
 from simualtors.sequencers import NGS_7A
-#'''from experiments open("C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiment\\results.py", "w")'''#
+from experiments import mistakes
 
 def main():
+    f = 50
     print('generate message')
     msg_in = '01101100'
     print('encode message')
@@ -32,8 +33,10 @@ def main():
     msg_read = two_bits_3.dna2bin(reads[0]) # here is the "מצקת"
     print('convert to binary')
     msg_decoded = repeatition_code_2A.decode(msg_read)
+    mistekes_presentage = mistakes.mistakes_presentage(msg_in, msg_decocded)
+    with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+        f.write("input: %s   output: %s    mistakes_presentage: %f /n ") %(msg_in, msg_decoded, mistakes_presentage)
     print('done:')
-    print("input msg=" ,msg_in, "output_msg = ", msg_decoded)
 
 
 a = 12

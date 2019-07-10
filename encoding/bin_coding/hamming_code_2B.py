@@ -37,7 +37,6 @@ def encode(msg):
 
 def decode(word):
     groups_of_7_list = [word[7*i:7*i+7] for i in range(int(math.ceil(len(word)/7)))]
-    print(groups_of_7_list)
     output = ''
     for group in groups_of_7_list:
         sum_z1 = int(group[0]) + int(group[1]) + int(group[3])
