@@ -45,7 +45,4 @@ def store_dna(printed_oligos, e, f, b):
         molecule = ''
     return stored_data
 
-b = 0.1#
-e = 33
-f = 66
 

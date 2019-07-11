@@ -20,18 +20,22 @@ def encode(msg):
     return out_msg
 
 
-"""this function will decode frim binari with corecting mistake code to the original code (hopfuly) 
-paremeter_1: the encoded msg
-type_paramete_1: str
+"""this function will decode from binari with corecting mistake code to the original code (hopfuly) 
+paremeter_1: the encoded msg = word
+type_parameter_1: str
 return: str of the hopfuly original msg"""
 
 def decode(word):
     groups_of_3_list = [word[3*i:3*i+3] for i in range(int(math.ceil(len(word)/3)))]
-    #added zeros and i need to figure ouut a way to "rememeber" take it down a the end.
+    #added zeros and i need to figure out a way to "rememeber" take it down a the end.
     if len(groups_of_3_list[-1]) == 1:
         groups_of_3_list[-1] += '00'
+        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+            f.write('in 2A decode, added "00" /n')
     if len(groups_of_3_list[-1]) == 2:
         groups_of_3_list[-1] += '0'
+        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+            f.write('in 2A decode, added "0" /n')
     #
     original_msg = ''
     for group in groups_of_3_list:

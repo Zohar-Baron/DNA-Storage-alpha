@@ -6,11 +6,27 @@
 # Author: Leon Anavy
 # Email: anavy (at) technion (dot) ac (dot) il
 #created: 03/07/19 15:15
-""" """
+"""this function will devide the binari str to groups of 4, and add nums by hamming code dict
+param_1: str of regular binari code
+return: str of binari + hamming code. """
 
 import math
 def encode(msg):
     groups_of_4_list = [msg[4*i:4*i+4] for i in range(int(math.ceil(len(msg)/4)))]
+    if len(groups_of_3_list[-1]) == 1:
+        groups_of_3_list[-1] += '000'
+        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+            f.write('in 2B ecnode, added "000" /n')
+    elif len(groups_of_3_list[-1]) == 2:
+        groups_of_3_list[-1] += '00'
+        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+            f.write('in 2B encode, added "00" /n')
+    elif len(groups_of_3_list[-1]) == 3:
+        groups_of_3_list[-1] += '0'
+        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
+            f.write('in 2B encode, added "0" /n')
+    else:
+        continue
     encoded_msg = ''
     for group in groups_of_4_list:
         p1 = int(group[0]) + int(group[1]) + int(group[3])
@@ -34,7 +50,11 @@ def encode(msg):
 #encode(msg)
 
 
-
+"""this function do the oposite from the one above, it should find the mistakes and fixed them.
+it devide the str to groups of 7, for each group cheks if the sums of each 3 nums out of 4 
+is correct acording to the answer that placed at the last 3 chars (from the 7). 
+param: str of binari code, came out from 3
+return: str of binari shorter and without mistakes hopefuly"""
 def decode(word):
     groups_of_7_list = [word[7*i:7*i+7] for i in range(int(math.ceil(len(word)/7)))]
     output = ''

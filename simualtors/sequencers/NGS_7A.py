@@ -6,7 +6,9 @@
 # Author: Zohar baron
 # Email: zoharbaron2002@gmail.com
 # Created: 03/07/19 15:09
-"""this function    """
+"""this function add mistakes, and then select just the mols woth the write len (and correct also a bit of the mistakes in them?)
+param: list of str in it came from 6
+return:one str of DNA"""
 import math
 import random
 

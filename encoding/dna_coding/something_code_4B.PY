@@ -7,16 +7,16 @@
 # Email: zoharbaron2002@gmail.com
 # Created: 08/07/2019 14:33
 
-"""this function will devide the ??? of dna to couples and for each couple
-it will add another char (by the dictionary).
-param:??? maybe to change back what i added to 3(deviding to oligos) to the begining of 5?
-rerturn: ???"""
+"""this function is correcting code to a str of DNA, it devide the str to groups of 4, 
+do sum to three trios and add to the end of each group the value of the "leftover" from den=viding the sum by 4.
+param: str of DNA came from 3
+return: str of dna longer"""
 
 import math
 def encod(word):
     groups_of_4_list = [word[4*i:4*i+4] for i in range(int(math.ceil(len(word)/4)))]
     encoded_msg = ''
-    value_dict = {'A':2, 'T':3, 'C':4, 'G':5}
+    value_dict = {'A':0, 'T':1, 'C':2, 'G':3}
     for group in groups_of_4_list:
         p1 = value_dict[group[0]] + value_dict[group[1]] + value_dict[group[3]]
         p2 = value_dict[group[0]] + value_dict[group[2]] + value_dict[group[3]]
@@ -49,6 +49,11 @@ def encod(word):
     return encoded_msg
 
 
+"""this function to the oposite from the one above, it should returna str of DNA without mistakes or asses characters.
+it devide the str to groups of 7, chek the sum and the result and what the shouls have been,
+and by that knows where there is a mistake and how to fix it
+param: str of DNA came from the sequencer
+return: str of shorter dna."""
 
 def decod(msg):
     groups_of_7_list = [msg[7*i:7*i+7] for i in range(int(math.ceil(len(msg)/7)))]
@@ -89,6 +94,7 @@ def decod(msg):
         elif p1 != z1 and p2 != z2 and p2 != z3:
             final_msg += group[0:3]
             #________
+            
         elif p1 != z1 and p2 != z2 and p3 == z3:
             #________
             final_msg += group[1: 4]

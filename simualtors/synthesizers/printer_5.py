@@ -7,29 +7,18 @@
 # Email: zoharbaron2002@gmail.com
 # Created: 03/07/19 14:05
 """this function will multiply the mols and then add mistakes to them.
-parameter_1: list of strings already transleted to DNA and and divided to oligos.
+parameter_1: list of strings already transleted to DNA and divided to oligos. came from pre_print.
 parameter_2: a = int, num of the times the printer multiply each oligo.
-param_3: b = int, from 0-b is the chance that there will be a mistake un a specific char (each specific char).
+param_3: b = int, from 0-b is the chance that there will be a mistake in a specific char (each specific char).
 param_4: c = int, under c is the % for delition mistake
 param_5: d = int, between c to d is the % for .
-return: str """
+return: list of moleculs (str) in it. """
 
 import math
 import random
 
 
-def printer_dna(dna_list, a, b, c, d):
-    _ = """oligos_list_no_index = [dna_list[(a//2)*i:(a//2)*i+a] for i in range(int(math.ceil(len(dna_list)/(a//2)))]
-    index_dict = {1: 'AAAA', 2: 'AAAT', 3: 'AAAC', 4: 'AAAG'}
-    oligos_list = []
-    oligonukleotide = ''
-    for i, oligo in enumerate(oligos_list_no_index):
-        oligonukleotide += index_dict[i]
-        oligonukleotide += o
-    oligos_list.append(oligonukleotide)"""#
-    oligos_list = ''
-    for char in dna_list:
-        oligos_list += char#
+def printer_dna(oligos_list, a, b, c, d):
     multiple_oligos = []
     multiple_oligos.append([oligos_list for i in range(a)])
     printed_oligos = []
@@ -58,9 +47,3 @@ def printer_dna(dna_list, a, b, c, d):
             printed_oligos.append(molecule)
             molecule = ''
     return printed_oligos
-
-a = 10
-b = 0.1#
-c = 33
-d = 66
-
