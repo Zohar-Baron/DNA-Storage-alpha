@@ -58,6 +58,7 @@ return: str of shorter dna."""
 def decod(msg):
     groups_of_7_list = [msg[7*i:7*i+7] for i in range(int(math.ceil(len(msg)/7)))]
     final_msg = ''
+    value_dict = {'A':0, 'T':1, 'C':2, 'G':3}
     for group in groups_of_7_list:
         z1 = value_dict[group[0]] + value_dict[group[1]] + value_dict[group[3]]
         z2 = value_dict[group[0]] + value_dict[group[2]] + value_dict[group[3]]
@@ -93,20 +94,21 @@ def decod(msg):
             final_msg += group[0:4]
         elif p1 != z1 and p2 != z2 and p2 != z3:
             final_msg += group[0:3]
-            #________
-            
+            missing_char = value_dict[(z1 - value_dict[group[0]] - value_dict[group[1]]) % 4]
+            final_msg += missing_char
         elif p1 != z1 and p2 != z2 and p3 == z3:
-            #________
+            missing_char = value_dict[(z1 - value_dict[group[1]] - value_dict[group[2]]) % 4]
+            final_msg += missing_char
             final_msg += group[1: 4]
         elif p1 != z1 and p2 == z2 and p3 != z3:
             final_msg += group[0]
-            #________
+            missing_char = value_dict[(z1 - value_dict[group[0]] - value_dict[group[3]]) % 4]
+            final_msg += missing_char
             final_msg += group[2:4]
         else:
             final_msg += group[0:2]
-            #________
+            missing_char = value_dict[(z2 - value_dict[group[0]] - value_dict[group[3]]) % 4]
+            final_msg += missing_char
             final_msg += group[3]
-    print(final_msg)
     return final_msg
 
-#msg = 'ACGTTCAACGTTCA'
