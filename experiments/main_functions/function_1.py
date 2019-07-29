@@ -17,7 +17,6 @@ from simualtors.sequencers import NGS_7A
 from experiments import mistakes
 
 def main():
-    f = 50
     print('generate message')
     msg_in = '01101100'
     print('encode message')
@@ -39,17 +38,18 @@ def main():
     mistakes_presentage = mistakes.mistake_presentage(msg_in, msg_decoded)
     with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
         f.write(f"input: {msg_in}   output: {msg_decoded}    mistakes_presentage: {mistakes_presentage} % /n" )
+    print('mistake presentage' , mistakes_presentage)
     print('done:')
 
 
-a = 12
-b = 0.1
-c = 25
-d = 50
-e = 25
-f = 50
-g = 25
-h = 50
+#a = 12
+#b = 0.1
+#c = 25
+#d = 50
+#e = 25
+#f = 50
+#g = 25
+#h = 50
 
-if __name__ == '__main__':
-	main()
+#if __name__ == '__main__':
+	#main()
