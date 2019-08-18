@@ -15,50 +15,60 @@ return: list of str in it, each str is a oligo(/mol)"""
 import math
 
 def pre_print(dna_str, k):
+    print(dna_str)
     oligos_list = []
     oligos_list_no_index = [dna_str[int(k//2)*i:int(k//2)*i+k] for i in range(int(math.ceil(len(dna_str)/int(k//2))))]
     oligos_list_no_index = oligos_list_no_index[:-1]
     print(oligos_list_no_index)
     x = 0
-    for i, oligo in enumerate(oligos_list_no_index):
+    oligos_new_list = []
+    for oligo in oligos_list_no_index:
         while len(oligo) != k:
             oligo += 'A'
             x += 1
+        oligos_new_list.append(oligo)
+    for i, oligo in enumerate(oligos_new_list):
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\add_zeros.txt', 'w') as f:
             f.write(f"pre_print added {x} times 'A' to oligonukleotide number {i}. /n")
+    indexes_list = []
+    for i, oligo in enumerate(oligos_new_list):
         print(i, oligo)
         index_1 = bin(i)[2:]
         print(index_1)
-        if len(index_1) % 2 != 0:
-            index_1 = '0' + index_1
-            with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\add_zeros.txt', 'w') as f:
-                f.write(f"pre_print added '0' to index number {i} /n")
-        index_2 =  " "
-        index_divided = [index_1[2*z:2*z+2] for z in range(int(math.ceil(len(index_1)/2)))]
-        print(index_divided)
-        indexes_list = []
+        indexes_list.append(index_1)
+    max_len = len(indexes_list[-1])
+    if max_len % 2 != 0:
+        indexes_list[-1] = '0' + indexes_list[-1]
+    max_len = len(indexes_list[-1])
+    # TO DO: max lenghth
+    index_divided_list = []
+    for index in indexes_list:
+        index_len = len(index)
+        while index_len != max_len:
+            index = '0' + index
+            index_len = len(index)
+        index_divided_list.append([index[2*z:2*z+2] for z in range(int(math.ceil(len(index)/2)))])
+    print(index_divided_list)
+        #index_divided_list.append(index_divided)
+        #print(index_divided_list)
+        #indexes_list = []
+    indexes_translated = []
+        #for index_divided in index_divided_list:
+    for index_divided in index_divided_list:
+        index_2 = ''
         for pair in index_divided:
             translator = {'01': 'T', '10': 'A', '00': 'G', '11': 'C'}
             index_2 += translator[pair]
-        oligo_1 = index_2 + oligo
-        print(index_2)
-        print(oligo_1)
-            indexes_list.append(index_2)
-    lenght = len(indexes_list[-1])
-    for i, oligo in enumerate(oligos_list_no_index):
-        #while len(index_2) < lenght:
-            #index_2 += A 
-        #לעשות רשימה של כל האינדקסים, לבדוק מה הארוך של האינדקס האחרון ולהוסיך לכל שאר האינדקסים לפי אותו מספר (לא צריך לכתוב את זה נראה לי) ואז להוסיף כל אינדקס לאוליגו שלו
-        print(oligo_1)
+        indexes_translated.append(index_2)
+            #index_2 = ''
+    for oligo, index in zip(oligos_new_list, indexes_translated):
+        oligo_1 = index + oligo
+        #oligo_1 = index_2 + oligo
         oligos_list.append(oligo_1)
-        print(oligos_list)
-        new_list = []
-        for tuple_ in oligos_list:
-            tuple_ = tuple_[0] + tuple_[1]
-            str(tuple_)
-            new_list.append(tuple_)
-    print(new_list)
-    return new_list, lenght
+        print(oligo_1)
+    print(oligos_list)
+    #return new_list, length
+   
 
 
 #
