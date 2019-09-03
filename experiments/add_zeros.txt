@@ -1,1 +1,101 @@
-pre_print added 5 times 'A' to last oligonukleotide. /n
+pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 16.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 23. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 13. 
+        index length = 4.
+        pre_print added 0 times 'A' to oligonukleotide number 13. 
+        index length = 4.
+        pre_print added 0 times 'A' to oligonukleotide number 28. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 28. 
+        index length = 6.
+        pre_print added 0 times 'A' to oligonukleotide number 28. 
+        index length = 6.
+        

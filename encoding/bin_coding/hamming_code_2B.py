@@ -13,20 +13,18 @@ return: str of binari + hamming code. """
 import math
 def encode(msg):
     groups_of_4_list = [msg[4*i:4*i+4] for i in range(int(math.ceil(len(msg)/4)))]
-    if len(groups_of_3_list[-1]) == 1:
+    if len(groups_of_4_list[-1]) == 1:
         groups_of_3_list[-1] += '000'
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
             f.write('in 2B ecnode, added "000" /n')
-    elif len(groups_of_3_list[-1]) == 2:
+    elif len(groups_of_4_list[-1]) == 2:
         groups_of_3_list[-1] += '00'
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
             f.write('in 2B encode, added "00" /n')
-    elif len(groups_of_3_list[-1]) == 3:
-        groups_of_3_list[-1] += '0'
+    else:
+        groups_of_4_list[-1] += '0'
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
             f.write('in 2B encode, added "0" /n')
-    else:
-        continue
     encoded_msg = ''
     for group in groups_of_4_list:
         p1 = int(group[0]) + int(group[1]) + int(group[3])

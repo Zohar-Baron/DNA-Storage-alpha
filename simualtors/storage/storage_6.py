@@ -43,6 +43,7 @@ def store_dna(printed_oligos, e, f, b):
                     molecule += random_char
         stored_data.append(molecule)
         molecule = ''
+    #print(stored_data)
     return stored_data
 
 

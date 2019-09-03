@@ -17,6 +17,7 @@ def encode(msg):
     out_msg = ''
     for char in msg:
         out_msg += 3*char
+    print(out_msg)
     return out_msg
 
 
@@ -44,4 +45,5 @@ def decode(word):
             original_msg += '1'
         else:
             original_msg += '0'
+    print(original_msg)
     return original_msg

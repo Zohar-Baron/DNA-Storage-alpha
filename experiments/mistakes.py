@@ -18,3 +18,9 @@ def mistake_presentage(msg_in, msg_decoded):
         i += 1
     mistake_present = (mistake_num/msg_len)*100
     return mistake_present
+
+def average(mistake_presentage_list):
+    sum = mistake_presentage_list[0] + mistake_presentage_list[1] + mistake_presentage_list[2] + mistake_presentage_list[3] + mistake_presentage_list[4] + mistake_presentage_list[5] + mistake_presentage_list[6] + mistake_presentage_list[7] + mistake_presentage_list[8] + mistake_presentage_list[9]
+    divide_by = len(mistake_presentage_list)
+    average = sum/divide_by
+    return average

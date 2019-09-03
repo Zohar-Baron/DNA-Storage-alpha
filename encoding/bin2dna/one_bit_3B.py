@@ -7,7 +7,7 @@
 # Email: ZoharBaron2002@gmail.com
 # Created: 29/07/2019 16:53
 
-"""thus functuon translate from bin to DNA by dividing to one bits and transating to letters avouding two in a line of same letter 
+"""this functuon translate from bin to DNA by dividing to one bits and transating to letters avouding two in a line of same letter 
 param_1: msg_encoded: str of encoded binar code.
 return: str of dna."""
 
