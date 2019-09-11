@@ -12,6 +12,7 @@ param_1: msg_encoded: str of encoded binar code.
 return: str of dna."""
 
 def bin2dna(msg_encoded):
+    #print(msg_encoded) #
     output = ''
     translator = {'0':'C', '1':'T'}
     for char in msg_encoded:
@@ -37,13 +38,15 @@ def bin2dna(msg_encoded):
 
 
 
-"""this function translate from sna to bin code
+"""this function translate from dna to bin code
 param_1: str of dna (came out from the sequencer or from 4) not seperated
 return: str of binar code, with or without code against mistakes in it."""
 
 def dna2bin(msg):
+    #print(msg)#
     output = ''
     dict = {'A':'0', 'C':'0', 'G':'1', 'T':'1'}
     for char in msg:
         output += dict[char]
+    #print(output)
     return output

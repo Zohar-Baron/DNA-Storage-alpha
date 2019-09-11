@@ -14,6 +14,7 @@ import random
 
 
 def dna_sequencer(stored_data, b, g, h, a, k):
+    #print(dna_sequencer)#
     sequenced_dna = []
     molecule = ''
     for mol in stored_data:
@@ -51,11 +52,10 @@ index_len : the length of each index
 return: one str of dna"""
 
 import math
-def api_sequencer(sequenced_dna, full_length, index_len, a):
-    #print(index_len)
-    for oligo in sequenced_dna:
-        if len(oligo) != full_length:
-            sequenced_dna.remove(oligo)
+def api_sequencer(sequenced_dna, full_length, index_len, a, num_of_A_added):
+    #print(len(sequenced_dna))
+    sequenced_dna = [oligo for oligo in sequenced_dna if len(oligo) == full_length]
+    #print(len(sequenced_dna))
     num_of_different_oligos = len(sequenced_dna)//a
     list_of_lists = [[] for i in range(num_of_different_oligos)]
     output = ''
@@ -82,12 +82,14 @@ def api_sequencer(sequenced_dna, full_length, index_len, a):
         try:
             oligo_place = int(original_msg, 2)-1
         except:
+            #print("failed to cinvert to binary")
             continue
         #print(oligo_place)
         try:
             list_of_lists[oligo_place].append(oligo[index_len:full_length])
         except:
             pass
+    #print(list_of_lists)
     new_list_of_lists = [[]for i in range (len(list_of_lists)+1)]
     i = 0
     for same_oligo_list in list_of_lists:
@@ -100,6 +102,8 @@ def api_sequencer(sequenced_dna, full_length, index_len, a):
     place_to_letter = {0:'A', 1:'C', 2:'G', 3:'T'}
     final_output = ''
     for same_oligos in new_list_of_lists:
+        if len(same_oligos) == 0:
+            continue
         ammount_of_oligos = len(same_oligos)
         for i in range(len(same_oligos[0])):
             bases_num = [0, 0, 0, 0]
@@ -109,6 +113,8 @@ def api_sequencer(sequenced_dna, full_length, index_len, a):
             largest_base_place = bases_num.index(largest_base)
             final_output += place_to_letter[largest_base_place] 
     #print(final_output)
+    if num_of_A_added != 0:
+        final_output = final_output[:-num_of_A_added]
     return final_output
 
 

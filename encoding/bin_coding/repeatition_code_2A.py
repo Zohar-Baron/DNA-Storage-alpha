@@ -13,11 +13,11 @@ type: str
 return: str"""
 import math
 
-def encode(msg):
+def encode(msg,r):
     out_msg = ''
     for char in msg:
-        out_msg += 3*char
-    print(out_msg)
+        out_msg += r*char
+    #print(out_msg)
     return out_msg
 
 
@@ -26,24 +26,26 @@ paremeter_1: the encoded msg = word
 type_parameter_1: str
 return: str of the hopfuly original msg"""
 
-def decode(word):
-    groups_of_3_list = [word[3*i:3*i+3] for i in range(int(math.ceil(len(word)/3)))]
+def decode(word,r):
+    groups_of_3_list = [word[r*i:r*i+r] for i in range(int(math.ceil(len(word)/r)))]
     #added zeros and i need to figure out a way to "rememeber" take it down a the end.
-    if len(groups_of_3_list[-1]) == 1:
+    """if len(groups_of_3_list[-1]) == 1:
         groups_of_3_list[-1] += '00'
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
             f.write('in 2A decode, added "00" /n')
     if len(groups_of_3_list[-1]) == 2:
         groups_of_3_list[-1] += '0'
         with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
-            f.write('in 2A decode, added "0" /n')
+            f.write('in 2A decode, added "0" /n')"""
     #
     original_msg = ''
     for group in groups_of_3_list:
+        if len(group) != r:
+            continue
         sum = int(group[0]) + int(group[1]) + int(group[2])
         if sum >1:
             original_msg += '1'
         else:
             original_msg += '0'
-    print(original_msg)
+    #print(original_msg)
     return original_msg

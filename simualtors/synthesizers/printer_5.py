@@ -22,7 +22,7 @@ def printer_dna(oligos_list, a, b, c, d):
     #print(oligos_list)
     multiple_oligos = []
     #print(multiple_oligos)
-    for oligo in oligos_list[:-2]:
+    for oligo in oligos_list[:-3]:
         multiple_oligos.append([oligo for i in range(a)])
     #print(multiple_oligos)
     printed_oligos = []
