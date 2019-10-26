@@ -15,8 +15,10 @@ from simualtors.synthesizers import pre_print
 from simualtors.synthesizers import printer_5
 from simualtors.sequencers import NGS_7A
 from experiments import mistakes
+import time
 
 def main(a,b,c,d,g,h,k,j,r):
+    start = time.time()
     #print('generate message')
     msg_in = input.create_input(j)
     #print('convert to dna')
@@ -35,23 +37,10 @@ def main(a,b,c,d,g,h,k,j,r):
     #print('convert to binary')
     msg_read = two_bits_3.dna2bin(msg_decoded, dna_seperate[3])#r
     mistakes_presentage = mistakes.mistake_presentage(msg_in, msg_read)
-    with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
-        f.write(f"input: {msg_in}   output: {msg_decoded}    mistakes_presentage: {mistakes_presentage} % /n" )
     #print('mistake presentage' , mistakes_presentage)
     #print('done:')
-    return mistakes_presentage
-
-#a = 12
-#b = 0.5
-#c = 33
-#d = 66
-#e = 33
-#f = 66
-#g = 33
-#h = 66
-#k = 6
-#j = 50
-#r = 3
-
-#if __name__ == '__main__':
-#	main(a,b,c,d,e,f,g,h,k,j,r)
+    num_of_oligos_generaly = len(dna_seperate[0]) * a
+    num_of_nukleotides_generaly = num_of_oligos_generaly * dna_seperate[1]
+    end = time.time()
+    time_it_takes = end - start
+    return [mistakes_presentage, time_it_takes, len(dna_encoded), len(dna_seperate[0]), dna_seperate[1], num_of_oligos_generaly, num_of_nukleotides_generaly]
