@@ -23,7 +23,6 @@ def bin2dna(msg_encoded):
     translator = {'01': 'T', '10': 'A', '00': 'G', '11': 'C'}
     for pair in msg_divide_list:
         output += translator[pair]
-    #print(output)
     return output, added_zero_at_last
 
 
@@ -31,12 +30,10 @@ def bin2dna(msg_encoded):
 param_1: str of dna (came out from the sequencer or from 4) not seperated
 return: str of binar code, with or without code against mistakes in it."""
 def dna2bin(msg, added_zero_at_last):
-    ##print(msg)
     output = ''
     translator2= {'T': '01', 'A': '10', 'G': '00', 'C': '11'}
     for letter in msg:
         output += translator2[letter]
     if added_zero_at_last == 1:
         output = output[:-1]
-    #print(output)
     return output

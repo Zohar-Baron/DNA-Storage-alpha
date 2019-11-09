@@ -14,7 +14,6 @@ import random
 
 
 def dna_sequencer(stored_data, b, g, h, a, k):
-    #print(dna_sequencer)#
     sequenced_dna = []
     molecule = ''
     for mol in stored_data:
@@ -39,11 +38,7 @@ def dna_sequencer(stored_data, b, g, h, a, k):
                     molecule += random_char
         sequenced_dna.append(molecule)
         molecule = ''
-    #יוצרת רשימה ובתוכה רשימות של חצאי אוליגונוקלאוטידם שזהים אחד לשני (לפי האינדקס)
-	#משווה ביניהם ואם יש משהו ממש יוצא דופן אז מוחקת אותו לגמרי
-    #משווה בין כל תו ברשימה (הראשונה) ואם הוא שווה לאותו התו ברוב שאר הרשימות של אותו אוליגונוקלאוטיד, אז מוסיפה אותו לרשימה החדשה שתהיהי האאוטפוט
     return sequenced_dna
-### מה עומק הריצוף???
 
 """this function is...
 param_1: sequenced_dna: list of strings each one is an oligonukleotide and exists several times
@@ -53,9 +48,7 @@ return: one str of dna"""
 
 import math
 def api_sequencer(sequenced_dna, full_length, index_len, a, num_of_A_added):
-    #print(len(sequenced_dna))
     sequenced_dna = [oligo for oligo in sequenced_dna if len(oligo) == full_length]
-    #print(len(sequenced_dna))
     num_of_different_oligos = len(sequenced_dna)//a
     list_of_lists = [[] for i in range(num_of_different_oligos)]
     output = ''
@@ -63,13 +56,10 @@ def api_sequencer(sequenced_dna, full_length, index_len, a, num_of_A_added):
     i = 0
     for oligo in sequenced_dna:
         index = oligo[:index_len]
-        #print(index)
         output = ''
         for letter in index:
             output += translator2[letter]
-        #print(output)
         groups_of_3_list = [output[3*i:3*i+3] for i in range(int(math.ceil(len(output)/3)))]
-        #print(groups_of_3_list)
         original_msg = ''
         for group in groups_of_3_list:
             sum = int(group[0]) + int(group[1]) + int(group[2])
@@ -77,19 +67,15 @@ def api_sequencer(sequenced_dna, full_length, index_len, a, num_of_A_added):
                 original_msg += '1'
             else:
                 original_msg += '0' 
-        original_msg = original_msg.lstrip('0')
-        #print(original_msg)       
+        original_msg = original_msg.lstrip('0')      
         try:
             oligo_place = int(original_msg, 2)-1
         except:
-            #print("failed to cinvert to binary")
             continue
-        #print(oligo_place)
         try:
             list_of_lists[oligo_place].append(oligo[index_len:full_length])
         except:
             pass
-    #print(list_of_lists)
     new_list_of_lists = [[]for i in range (len(list_of_lists)+1)]
     i = 0
     for same_oligo_list in list_of_lists:
@@ -112,10 +98,6 @@ def api_sequencer(sequenced_dna, full_length, index_len, a, num_of_A_added):
             largest_base = max(bases_num)
             largest_base_place = bases_num.index(largest_base)
             final_output += place_to_letter[largest_base_place] 
-    #print(final_output)
     if num_of_A_added != 0:
         final_output = final_output[:-num_of_A_added]
     return final_output
-
-
-#api_sequencer(['GGGTATGAGTAGACC', 'GTCGTGTGACATGCA', 'GTCGTGTGACATGCA', 'GTCGTGTGACATGCA','GTCGTGTGACATAGG', 'GGGTATGAGTAGACC', 'GGGTATGAGTAGACC', 'CGTACAGTACTCGAT'], 16, 3, 4)

@@ -19,27 +19,16 @@ import time
 
 def main(a,b,c,d,g,h,k,j,r):
     start = time.time()
-    #print('generate message')
     msg_in = input.create_input(j)
-    #print('encode message')
     msg_encoded = repeatition_code_2A.encode(msg_in,r)
-    #print('convert to dna')
     dna_encoded = two_bits_3.bin2dna(msg_encoded)
-    #print('seperate dna')
     dna_seperate = pre_print.pre_print(dna_encoded[0], k)
-    #print('synthesize dna')
     dna_mol_syn = printer_5.printer_dna(dna_seperate, a, b, c, d)
-    #print('sequence dna')
     reads = NGS_7A.dna_sequencer(dna_mol_syn, b, g, h, a, k)
     reads_one_str = NGS_7A.api_sequencer(reads, dna_seperate[1], dna_seperate[2],a, dna_seperate[3])
-    #print('infer dna sequence')
-    #print(reads_one_str)
     msg_read = two_bits_3.dna2bin(reads_one_str, dna_seperate[3])
-    #print('convert to binary')
     msg_decoded = repeatition_code_2A.decode(msg_read,r)
     mistakes_presentage = mistakes.mistake_presentage(msg_in, msg_decoded)
-    #print('mistake presentage' , mistakes_presentage) 
-    #print('done:')
     num_of_oligos_generaly = len(dna_seperate[0]) * a
     num_of_nukleotides_generaly = num_of_oligos_generaly * dna_seperate[1]
     end = time.time()

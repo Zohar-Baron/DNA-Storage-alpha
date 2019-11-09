@@ -22,5 +22,4 @@ def create_input(j):
         else: 
             msg_in += '1'
         msg_in_len = len(msg_in)
-    #print(msg_in)
     return msg_in

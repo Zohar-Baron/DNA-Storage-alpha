@@ -15,10 +15,11 @@ return: list of str in it, each str is a oligo(/mol)"""
 import math
 
 def pre_print(dna_str, k):
-    #print(dna_str)
+    #print(dna_str, k)
     oligos_list = []
     oligos_list_no_index = [dna_str[int(k//2)*i:int(k//2)*i+k] for i in range(int(math.ceil(len(dna_str)/int(k//2))))]
     oligos_list_no_index = oligos_list_no_index[:-1]
+    #print(oligos_list_no_index)
     num_of_A_added = 0
     oligos_new_list = []
     for i , oligo in enumerate(oligos_list_no_index):
@@ -26,21 +27,16 @@ def pre_print(dna_str, k):
             oligo += 'A'
             num_of_A_added += 1
         oligos_new_list.append(oligo)
-        #
-        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\add_zeros.txt', 'a') as f:
-            f.write(f"""pre_print added {num_of_A_added} times 'A' to oligonukleotide number {i}. 
-        """)# do tab for those two lines?
+    #print(oligos_new_list)
     indexes_list_1 = []
     for i, oligo in enumerate(oligos_new_list):
         index_1 = bin(i+1)[2:]
         indexes_list_1.append(index_1)
+    #print(indexes_list_1)
     max_len = len(indexes_list_1[-1])
     if max_len % 2 != 0:
         indexes_list_1[-1] = '0' + indexes_list_1[-1]
     max_len = len(indexes_list_1[-1])
-    with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\add_zeros.txt', 'a') as f:
-        f.write(f"""index length = {max_len}.
-        """)
     indexes_list = []
     index_divided_list = [] 
     for index in indexes_list_1:
@@ -51,7 +47,7 @@ def pre_print(dna_str, k):
         encoded_index = ""
         for char in index:
             encoded_index += 3 * char
-        indexes_list.append(encoded_index)   ##?   
+        indexes_list.append(encoded_index)
         index_divided_list.append([encoded_index[2*z:2*z+2] for z in range(int(math.ceil(len(encoded_index)/2)))])
     indexes_translated = []
     for index_divided in index_divided_list:
@@ -65,13 +61,4 @@ def pre_print(dna_str, k):
         full_length = len(oligo_1)
         oligos_list.append(oligo_1)
     index_len = len(indexes_translated[-1])
-    #print(oligos_list, index_len, full_length)
     return oligos_list, full_length, index_len, num_of_A_added
-   
-
-
-#
-#k = 6
-#dna_str = 'ACGTACGTACGTACGT'
-#pre_print(dna_str, k)
-#

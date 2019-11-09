@@ -17,7 +17,6 @@ def encode(msg,r):
     out_msg = ''
     for char in msg:
         out_msg += r*char
-    #print(out_msg)
     return out_msg
 
 
@@ -28,16 +27,6 @@ return: str of the hopfuly original msg"""
 
 def decode(word,r):
     groups_of_3_list = [word[r*i:r*i+r] for i in range(int(math.ceil(len(word)/r)))]
-    #added zeros and i need to figure out a way to "rememeber" take it down a the end.
-    """if len(groups_of_3_list[-1]) == 1:
-        groups_of_3_list[-1] += '00'
-        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
-            f.write('in 2A decode, added "00" /n')
-    if len(groups_of_3_list[-1]) == 2:
-        groups_of_3_list[-1] += '0'
-        with open('C:\\Users\\user\\Desktop\\zohar\\Alpha\\Study\\DNA-Storage-alpha\\experiments\\results.txt', 'w') as f:
-            f.write('in 2A decode, added "0" /n')"""
-    #
     original_msg = ''
     for group in groups_of_3_list:
         if len(group) != r:
@@ -47,5 +36,4 @@ def decode(word,r):
             original_msg += '1'
         else:
             original_msg += '0'
-    #print(original_msg)
     return original_msg
