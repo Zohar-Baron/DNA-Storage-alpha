@@ -15,11 +15,12 @@ return: list of str in it, each str is a oligo(/mol)"""
 import math
 
 def pre_print(dna_str, k):
-    #print(dna_str, k)
+    print(dna_str, k)
     oligos_list = []
     oligos_list_no_index = [dna_str[int(k//2)*i:int(k//2)*i+k] for i in range(int(math.ceil(len(dna_str)/int(k//2))))]
-    oligos_list_no_index = oligos_list_no_index[:-1]
-    #print(oligos_list_no_index)
+    if len(oligos_list_no_index) != 1: 
+        oligos_list_no_index = oligos_list_no_index[:-1]
+    print(oligos_list_no_index)
     num_of_A_added = 0
     oligos_new_list = []
     for i , oligo in enumerate(oligos_list_no_index):
@@ -27,12 +28,12 @@ def pre_print(dna_str, k):
             oligo += 'A'
             num_of_A_added += 1
         oligos_new_list.append(oligo)
-    #print(oligos_new_list)
+    print(oligos_new_list)
     indexes_list_1 = []
     for i, oligo in enumerate(oligos_new_list):
         index_1 = bin(i+1)[2:]
         indexes_list_1.append(index_1)
-    #print(indexes_list_1)
+    print(indexes_list_1)
     max_len = len(indexes_list_1[-1])
     if max_len % 2 != 0:
         indexes_list_1[-1] = '0' + indexes_list_1[-1]
